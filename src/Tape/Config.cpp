@@ -20,6 +20,8 @@ Tape::Config::Config(const char* fileName)
                 RewindTime      = std::chrono::microseconds( std::stoi(str.substr(sizeof("RewindTime")))    );
             else if (str.starts_with("SeekTime "))
                 SeekTime        = std::chrono::microseconds( std::stoi(str.substr(sizeof("SeekTime")))      );
+            else if (str.starts_with("SortAvailableMemory "))
+                SortAvailableMemory = std::stoul(str.substr(sizeof("SortAvailableMemory ")));
             else
             {
                 std::stringstream strstr;
@@ -36,6 +38,7 @@ Tape::Config::Config(const char* fileName)
         fstream << "ReadWriteTime " << ReadWriteTime.count() << std::endl;
         fstream << "RewindTime " << RewindTime.count() << std::endl;
         fstream << "SeekTime " << SeekTime.count() << std::endl;
+        fstream << "SortAvailableMemory " << SortAvailableMemory << std::endl;
     }
 }
 

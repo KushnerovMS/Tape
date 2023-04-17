@@ -10,6 +10,7 @@ struct Config
     std::chrono::microseconds ReadWriteTime = std::chrono::microseconds(0);
     std::chrono::microseconds RewindTime = std::chrono::microseconds(0);
     std::chrono::microseconds SeekTime = std::chrono::microseconds(0);
+    size_t SortAvailableMemory = 128;
 
     Config(const char* fileName);
 };

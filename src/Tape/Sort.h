@@ -7,10 +7,11 @@
 
 #include "Tape.h"
 #include "Error.h"
+#include "Config.h"
 
 namespace Tape {
 
-const size_t AVAILABLE_MEMORY = 128;
+//const size_t AVAILABLE_MEMORY = 128;
 
 template<typename T, typename Cmp>
 void NaturalSorting(Tape<T>& in, Tape<T>& out, Cmp cmp)
@@ -34,7 +35,7 @@ void NaturalSorting(Tape<T>& in, Tape<T>& out, Cmp cmp)
     // presorting
     ///////////////////////////////////////////////////////////////////////////////////////////
 
-    size_t bufSize = AVAILABLE_MEMORY / sizeof(T);
+    size_t bufSize = config.SortAvailableMemory / sizeof(T);
     T* buf = new T[bufSize];
     while (! in.atEnd())
     {
