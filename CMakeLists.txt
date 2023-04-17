@@ -9,6 +9,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 file(GLOB_RECURSE Tape_src
     src/Tape/*.h src/Tape/*.cpp)
 
-add_executable(Tape src/main.cpp  ${Tape_src})
+add_executable(TapeSort src/main.cpp  ${Tape_src})
 
 add_subdirectory(tests)
