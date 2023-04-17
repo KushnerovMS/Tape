@@ -15,20 +15,17 @@ struct
 
 int main() try
 {
-    std::default_random_engine rnd(std::time(nullptr));
-    std::uniform_int_distribution<int> dstr (0, 100000);
+    std::string inputFileName;
+    std::string outputFileName;
 
-    size_t tapeSize = 100000;
-    Tape::Tape<int> inTape = Tape::CreateTape<int>("InTape", tapeSize);
-    do inTape.setItem(dstr(rnd));
-    while (inTape.Next());
-    std::cout << inTape << std::endl << std::endl;
+    std::cout << "Input file name:" << std::endl;
+    std::cin >> inputFileName;
+    std::cout << "Output file name:" << std::endl;
+    std::cin >> outputFileName;
 
-    Tape::Tape<int> outTape = Tape::CreateTape<int>("OutTape", tapeSize);
-
+    Tape::Tape<int> inTape(inputFileName.c_str());
+    Tape::Tape<int> outTape = Tape::CreateTape<int>(outputFileName.c_str(), inTape.getSize());
     Tape::NaturalSorting(inTape, outTape, less);
-
-    std::cout << outTape << std::endl;
 
     return 0;
 }

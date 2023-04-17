@@ -13,7 +13,7 @@ namespace Tape {
 const size_t AVAILABLE_MEMORY = 128;
 
 template<typename T, typename Cmp>
-void NaturalSorting(Tape<T>& in, Tape<T>& out, Cmp& cmp)
+void NaturalSorting(Tape<T>& in, Tape<T>& out, Cmp cmp)
 {
     if (in.getSize() > out.getSize())
         throw Error("Sorting: Size of output tape less than size of input tape");
@@ -157,14 +157,13 @@ void NaturalSorting(Tape<T>& in, Tape<T>& out, Cmp& cmp)
     /////////////////////////////////////////////////////////////////////////////////////////
 
         //std::cout << out << std::endl << std::endl;
-        //std::cout << "gg" << std::endl;
 
     }
 
 
 } // scope of tmp tapes
 
-    //std::filesystem::remove_all("tmp");
+    std::filesystem::remove_all("tmp");
 }
 
 } // namespace Tape
