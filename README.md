@@ -12,7 +12,7 @@ Tape uses files for emulation. Data represented in files in binary format.
 
 # Dependences
 
-CppCache requires Catch2 package to make tests. You can look https://github.com/catchorg/Catch2 for it.
+Tape requires Catch2 package to make tests. You can look https://github.com/catchorg/Catch2 for it.
 
 # Building
 
